@@ -17,6 +17,27 @@ body {
     font-weight: bold;
   }
   
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    text-align: center;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
+}
+  }
+  
+  header nav ul li {
+    display: inline;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
   main {
     display: flex;
     justify-content: center;
@@ -81,4 +102,6 @@ body {
   .login-link a:hover {
     text-decoration: underline;
   }
-  
+  footer {
+    text-align: center;
+  }

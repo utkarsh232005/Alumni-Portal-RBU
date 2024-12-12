@@ -9,9 +9,7 @@ body {
     background: #003366;
     color: white;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
   }
   
   header .logo {
@@ -22,6 +20,12 @@ body {
   header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 15px;
+    text-align: center;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
   }
   
   header nav ul li {
@@ -31,7 +35,6 @@ body {
   header nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
   }
   
   main {
@@ -65,4 +68,6 @@ body {
     width: 100%;
     bottom: 0;
   }
-  
+  footer {
+    text-align: center;
+  }

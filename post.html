@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Job Post</title>
+    <link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ramdeobaba University</div>
+        <nav>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="jobs.html">Job Posts</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+    </header>
+
+    <main>
+        <form id="jobPostForm">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title" required>
+
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" placeholder="Enter company name" required>
+
+            <label for="jobDescription">Job Description:</label>
+            <textarea id="jobDescription" name="jobDescription" placeholder="Enter job description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <label for="applyLink">Application Link:</label>
+            <input type="url" id="applyLink" name="applyLink" placeholder="Enter application link" required>
+
+            <button type="submit">Post Job</button>
+        </form>
+        <!-- <section id="job-posts">
+            <h2>Job Opportunities</h2>
+            <div id="jobPostsContainer"></div> 
+        </section> -->
+
+        <p id="formMessage"></p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ramdeobaba University Alumni Platform. All rights reserved.</p>
+    </footer>
+    <script src="js/post.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@ body {
     background: #003366;
     color: white;
     padding: 10px;
+    text-align: center;
   }
   
   header .logo {
@@ -18,6 +19,10 @@ body {
     padding: 0;
     display: flex;
     gap: 15px;
+    text-align: center;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
   }
   
   header nav ul li {
@@ -36,19 +41,65 @@ body {
   h2 {
     text-align: center;
   }
-  
-  .card {
-    background: #f4f4f4;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
+
+  /* h3{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    text-align: center;
   }
-  
-  .btn {
+
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    text-align: center;
+  } */
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+    gap: 20px; /* Adds space between the cards */
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 100px;
+    margin: 50px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Makes the height flexible */
+}
+
+.card h3, .card p {
+    margin: 0; /* Removes default margins from h3 and p */
+    padding: 0; /* Ensures no extra padding inside text elements */
+    flex: 1; /* Makes the text use the remaining space inside the card */
+}
+
+.btn {
     background: #003366;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-  }
-  
+    text-align: center;
+    margin-top: 20px; /* Adds spacing between button and text */
+}
+footer {
+  text-align: center;
+}
