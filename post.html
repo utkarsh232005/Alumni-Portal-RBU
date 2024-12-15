@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a Job Post</title>
     <link rel="stylesheet" href="css/post.css">
+    <script type="module" src="post.js"></script>
 </head>
 <body>
     <header>
@@ -20,6 +21,8 @@
 
     <main>
         <form id="jobPostForm">
+            <div class="alert" style="display: none;">Message Sent!</div>
+
             <label for="jobTitle">Job Title:</label>
             <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title" required>
 
@@ -35,7 +38,7 @@
             <label for="applyLink">Application Link:</label>
             <input type="url" id="applyLink" name="applyLink" placeholder="Enter application link" required>
 
-            <button type="submit">Post Job</button>
+            <button type="submit" id="submit">Post Job</button>
         </form>
         <!-- <section id="job-posts">
             <h2>Job Opportunities</h2>
@@ -47,6 +50,6 @@
     <footer>
         <p>&copy; 2024 Ramdeobaba University Alumni Platform. All rights reserved.</p>
     </footer>
-    <script src="js/post.js"></script>
+    
 </body>
 </html>
