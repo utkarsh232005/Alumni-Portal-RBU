@@ -39,7 +39,7 @@
 // });
 
 
-/// Updated post.js: Save job posts to localStorage
+// / Updated post.js: Save job posts to localStorage
 document.getElementById('jobPostForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -78,3 +78,4 @@ document.getElementById('jobPostForm').addEventListener('submit', function (even
         formMessage.textContent = '';
     }, 3000);
 });
+
