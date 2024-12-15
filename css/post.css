@@ -11,6 +11,7 @@ header {
     color: white;
     padding: 10px;
     text-align: center;
+    border-radius: 15px;
 }
 header .logo {
     font-size: 24px;
@@ -33,7 +34,7 @@ header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: unset;
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     border-radius: 4px;
     /* Removed hover transition */
 }
@@ -136,6 +137,7 @@ form button:hover {
 /* Highlight the active page in navigation */
 footer {
     text-align: center;
+<<<<<<< HEAD
 } */
 
 /* .alert{
@@ -149,3 +151,6 @@ footer {
     animation: fadeOut 7s forwards;
   }
      */
+=======
+} 
+>>>>>>> 068529457c208e69ba6ea6321c33a77f8d5820c8

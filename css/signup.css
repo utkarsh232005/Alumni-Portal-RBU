@@ -10,6 +10,7 @@ body {
     color: white;
     padding: 10px;
     text-align: center;
+    border-radius: 15px;
   }
   
   header .logo {
@@ -26,8 +27,12 @@ body {
     flex-wrap: nowrap;
     align-items: baseline;
     justify-content: center;
+<<<<<<< HEAD
 }
   
+=======
+  }
+>>>>>>> 068529457c208e69ba6ea6321c33a77f8d5820c8
   
   header nav ul li {
     display: inline;
