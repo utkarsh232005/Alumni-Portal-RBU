@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
-  <link rel="stylesheet" href="/css/signup.css">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> 
+  <link rel="stylesheet" href="css/signup.css">
   <script type="module" src="js/firebaseauth.js"></script>
 </head>
 <body>
   <header>
-    <div class="logo">Ramdeobaba University</div>
+    <div class="logo">Ramdeobaba College of Engineering and Management</div>
   </header>
 
   <main>
@@ -19,11 +20,15 @@
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="name" id="name" name="email" placeholder="Enter your full name" required>
+          <input type="name" id="name"  placeholder="Enter your full name" required>
         </div>
         <div class="form-group">
           <label for="email">College Email ID</label>
           <input type="email" id="email" name="email" placeholder="Enter your college email" required>
+        </div>
+        <dic class="form-group">
+          <label for="phone number">Mobile Number</label>
+          <input type="number" id="phoneNumber" name="phone number" placeholder="Enter Phone Number" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -33,16 +38,27 @@
           <label for="confirmPassword">Confirm Password</label>
           <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
         </div>
+        <div class="form-group">
+          <label for="about">Tell Something About You</label>
+          <textarea id="about" class="about" name="about" placeholder="About" required></textarea>
+        </div>
+
+        
+
         <button type="submit" class="btn" id="submit">Sign Up</button>
+        <p class="login-link">Already have an account? <a href="login.html">Log In</a></p>
       </form>
-      <p class="login-link">Already have an account? <a href="login.html">Log In</a></p>
+      
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 College Alumni Platform. All rights reserved.</p>
+    <p>&copy; 2024 Ramdeobaba College of Engineering and Management Alumni Platform | All rights reserved.</p>
   </footer>
 
+
   
+
+
 </body>
 </html>

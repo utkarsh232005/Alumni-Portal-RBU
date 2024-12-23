@@ -4,13 +4,14 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} fro
 import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAo21ZP_OCJXqbxxh4M3ujrllWTlJxfng8",
-  authDomain: "alumni-portal-a4a6e.firebaseapp.com",
-  projectId: "alumni-portal-a4a6e",
-  storageBucket: "alumni-portal-a4a6e.firebasestorage.app",
-  messagingSenderId: "233790086192",
-  appId: "1:233790086192:web:3134c3629720e6d39a21f5"
-};
+    apiKey: "AIzaSyAo21ZP_OCJXqbxxh4M3ujrllWTlJxfng8",
+    authDomain: "alumni-portal-a4a6e.firebaseapp.com",
+    databaseURL: "https://alumni-portal-a4a6e-default-rtdb.firebaseio.com",
+    projectId: "alumni-portal-a4a6e",
+    storageBucket: "alumni-portal-a4a6e.firebasestorage.app",
+    messagingSenderId: "233790086192",
+    appId: "1:233790086192:web:3134c3629720e6d39a21f5"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -32,6 +33,11 @@ signUp.addEventListener('click', (event)=>{
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmpassword = document.getElementById('confirmPassword').value;
+    const name  = document.getElementById('name').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const about = document.getElementById('about').value;
+    // const firstname = document.getElementById('firstname').value;
+    
 
     const auth = getAuth();
     const db = getFirestore();
@@ -40,7 +46,10 @@ signUp.addEventListener('click', (event)=>{
     .then((userCredential)=>{
         const user=userCredential.user;
         const userData={
-            email: email
+            email: email,
+            name: name,
+            phoneNumber: phoneNumber,
+            about: about
             // firstname: firstname,
             // lastname: lastname
         };
