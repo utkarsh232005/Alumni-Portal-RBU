@@ -64,3 +64,4 @@ logoutButton.addEventListener("click", ()=>{
         console.error("Error Signing Out: ", error);
     })
 })
+// console.log("homepage.js");
