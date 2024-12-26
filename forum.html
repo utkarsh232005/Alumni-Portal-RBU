@@ -20,18 +20,28 @@
   </header>
 
   <main>
-    <section class="chat-section">
-      <h2>Group Chat</h2>
-      <div id="chatBox">
-        <div id="messages">
-          <!-- Chat messages will load dynamically -->
-        </div>
-        <form id="messageForm">
-          <input type="text" id="messageInput" placeholder="Type a message..." required>
-          <button type="submit">Send</button>
-        </form>
+    <main>
+      <div class="forum-container">
+          <div class="forum-posts">
+              <h2>Discussion Topics</h2>
+              <div class="post" id="post1">
+                  <h3>Career Advice for New Graduates</h3>
+                  <p>Discuss tips and strategies for new graduates entering the job market.</p>
+                  <button onclick="toggleReplyForm('reply1')">Reply</button>
+                  <div class="replies" id="reply1">
+                      <!-- Replies will go here -->
+                  </div>
+                  <textarea id="replyText1" placeholder="Write a reply..."></textarea>
+                  <button onclick="addReply('post1', 'reply1', 'replyText1')">Post Reply</button>
+              </div>
+          </div>
+
+          <div class="create-post">
+              <h2>Create a New Post</h2>
+              <textarea id="newPostText" placeholder="Write your discussion topic..."></textarea>
+              <button onclick="createPost()">Create Post</button>
+          </div>
       </div>
-    </section>
   </main>
 
   <footer>

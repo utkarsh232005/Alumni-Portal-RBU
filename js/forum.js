@@ -111,51 +111,100 @@
 
 
 
-// DOM Elements
-const messageForm = document.getElementById('messageForm');
-const messageInput = document.getElementById('messageInput');
-const messagesContainer = document.getElementById('messages');
+// // DOM Elements
+// const messageForm = document.getElementById('messageForm');
+// const messageInput = document.getElementById('messageInput');
+// const messagesContainer = document.getElementById('messages');
 
-// Function to get messages from localStorage
-function getMessages() {
-  const messages = localStorage.getItem('groupChatMessages');
-  return messages ? JSON.parse(messages) : [];
-}
+// // Function to get messages from localStorage
+// function getMessages() {
+//   const messages = localStorage.getItem('groupChatMessages');
+//   return messages ? JSON.parse(messages) : [];
+// }
 
-// Function to save messages to localStorage
-function saveMessages(messages) {
-  localStorage.setItem('groupChatMessages', JSON.stringify(messages));
-}
+// // Function to save messages to localStorage
+// function saveMessages(messages) {
+//   localStorage.setItem('groupChatMessages', JSON.stringify(messages));
+// }
 
-// Function to add a message to the chat window
-function appendMessage(text, sender) {
-  const messageElement = document.createElement('div');
-  messageElement.className = `message ${sender === 'self' ? 'sent' : 'received'}`;
-  messageElement.textContent = text;
-  messagesContainer.appendChild(messageElement);
-  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll
-}
+// // Function to add a message to the chat window
+// function appendMessage(text, sender) {
+//   const messageElement = document.createElement('div');
+//   messageElement.className = `message ${sender === 'self' ? 'sent' : 'received'}`;
+//   messageElement.textContent = text;
+//   messagesContainer.appendChild(messageElement);
+//   messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll
+// }
 
-// Load messages from localStorage on page load
-document.addEventListener('DOMContentLoaded', () => {
-  const messages = getMessages();
-  messages.forEach((msg) => appendMessage(msg.text, msg.sender));
-});
+// // Load messages from localStorage on page load
+// document.addEventListener('DOMContentLoaded', () => {
+//   const messages = getMessages();
+//   messages.forEach((msg) => appendMessage(msg.text, msg.sender));
+// });
 
-// Send message and store it in localStorage
-messageForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const text = messageInput.value.trim();
-  if (text) {
-    // Locally render the message immediately
-    appendMessage(text, 'self');
+// // Send message and store it in localStorage
+// messageForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const text = messageInput.value.trim();
+//   if (text) {
+//     // Locally render the message immediately
+//     appendMessage(text, 'self');
 
-    // Save message to localStorage
-    const messages = getMessages();
-    messages.push({ text, sender: 'self', timestamp: Date.now() });
-    saveMessages(messages);
+//     // Save message to localStorage
+//     const messages = getMessages();
+//     messages.push({ text, sender: 'self', timestamp: Date.now() });
+//     saveMessages(messages);
 
-    // Clear the input field
-    messageInput.value = '';
+//     // Clear the input field
+//     messageInput.value = '';
+//   }
+// });
+///////////////////////////////////////////////////////////////////////////////////////////
+
+function toggleReplyForm(replyId) {
+  const replyForm = document.getElementById(replyId);
+  if (replyForm.style.display === "block") {
+      replyForm.style.display = "none";
+  } else {
+      replyForm.style.display = "block";
   }
-});
+}
+
+function addReply(postId, replyId, replyTextId) {
+  const replyText = document.getElementById(replyTextId).value;
+  if (replyText.trim() === "") {
+      alert("Please write a reply.");
+      return;
+  }
+
+  const replyContainer = document.getElementById(replyId);
+  const newReply = document.createElement("div");
+  newReply.classList.add("reply");
+  newReply.innerHTML = `<p><strong>You:</strong> ${replyText}</p>`;
+  replyContainer.appendChild(newReply);
+
+  document.getElementById(replyTextId).value = ""; // Clear the text area after posting
+}
+
+function createPost() {
+  const newPostText = document.getElementById("newPostText").value;
+  if (newPostText.trim() === "") {
+      alert("Please write a discussion topic.");
+      return;
+  }
+
+  const forumPosts = document.querySelector(".forum-posts");
+  const newPost = document.createElement("div");
+  newPost.classList.add("post");
+  newPost.innerHTML = `
+      <h3>${newPostText}</h3>
+      <p>Start the discussion!</p>
+      <button onclick="toggleReplyForm('reply${forumPosts.children.length + 1}')">Reply</button>
+      <div class="replies" id="reply${forumPosts.children.length + 1}"></div>
+      <textarea id="replyText${forumPosts.children.length + 1}" placeholder="Write a reply..."></textarea>
+      <button onclick="addReply('post${forumPosts.children.length + 1}', 'reply${forumPosts.children.length + 1}', 'replyText${forumPosts.children.length + 1}')">Post Reply</button>
+  `;
+  forumPosts.appendChild(newPost);
+
+  document.getElementById("newPostText").value = ""; // Clear the text area after creating a post
+}
