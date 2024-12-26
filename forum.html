@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forum</title>
+  <title>Group Chat</title>
   <link rel="stylesheet" href="/css/forum.css">
 </head>
 <body>
@@ -20,10 +20,16 @@
   </header>
 
   <main>
-    <section class="forum">
-      <h2>Forum</h2>
-      <div id="forumContainer">
-        <!-- Forum posts will be loaded here dynamically -->
+    <section class="chat-section">
+      <h2>Group Chat</h2>
+      <div id="chatBox">
+        <div id="messages">
+          <!-- Chat messages will load dynamically -->
+        </div>
+        <form id="messageForm">
+          <input type="text" id="messageInput" placeholder="Type a message..." required>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </section>
   </main>
@@ -32,6 +38,8 @@
     <p>&copy; 2024 Ramdeobaba University Alumni Platform. All rights reserved.</p>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
   <script src="js/forum.js"></script>
 </body>
 </html>
