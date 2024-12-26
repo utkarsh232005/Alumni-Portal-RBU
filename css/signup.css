@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
   }
   
   header {
@@ -48,16 +48,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f9f9f9;
+    background: #ffffff;
   }
   
   .signup-container {
     background: white;
-    padding: 30px;
+    padding: 64px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    margin: 32px 5rem -8rem;
   }
   
   h2 {
@@ -95,7 +96,7 @@ body {
   }
   
   .login-link {
-    margin-top: 15px;
+    margin: 16px 47px -5px;
     font-size: 14px;
   }
   
@@ -121,4 +122,17 @@ body {
     opacity: 0;
     animation: fadeOut 7s forwards;
   }
+
+  footer p{
+    text-align: center;
+    padding: 10rem 0rem 0rem 0rem;
+    margin: 4rem 0rem 1rem;
+  }
+
+  .form-group .about{
+    padding: 5px 8px;
+    margin: 4px 7px;
+    width: 18rem;
+  }
     
+  
